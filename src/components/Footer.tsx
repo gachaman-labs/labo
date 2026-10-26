@@ -5,7 +5,7 @@ import { TodoText } from "@/components/ui/Todo";
 
 export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
-  const name = locale === "ja" && company.nameJa !== "TODO" ? company.nameJa : company.nameKo;
+  const name = locale === "ja" ? (company.nameJa !== "TODO" ? company.nameJa : company.nameEn) : company.nameKo;
   const rep = locale === "ja" ? company.representativeJa : company.representative;
   const contact = company.email !== "TODO" ? company.email : company.phone;
 
@@ -15,7 +15,8 @@ export async function Footer({ locale }: { locale: string }) {
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
             <p className="text-lg font-bold text-white">
-              {name} <span className="font-normal text-white/70">({company.nameEn})</span>
+              {name}
+              {name !== company.nameEn ? <span className="font-normal text-white/70"> ({company.nameEn})</span> : null}
             </p>
             <dl className="mt-4 space-y-1 text-sm">
               <div className="flex gap-2"><dt>{t("representative")}</dt><dd>{rep}</dd></div>

@@ -8,7 +8,7 @@ export const company = {
   nameEn: "Two Hands Meta",
   nameJa: TODO, // TODO(JP): 일본어 상호 표기 확정 필요
   representative: "김현",
-  representativeJa: "김현", // TODO(JP): 일본어 표기(한자/가타카나) 확정 필요
+  representativeJa: "キム　ヒョン",
   established: TODO,
   address: TODO, // 소재지 (일본)
   registration: TODO, // 사업자 정보
