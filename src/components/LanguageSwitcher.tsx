@@ -13,7 +13,7 @@ export function LanguageSwitcher({ inverse = false }: { inverse?: boolean }) {
 
   return (
     <div role="group" aria-label={t("language")} className="flex items-center gap-1">
-      {(["ko", "ja"] as const).map((l) => (
+      {(["ja", "ko"] as const).map((l) => (
         <Link
           key={l}
           href={pathname}

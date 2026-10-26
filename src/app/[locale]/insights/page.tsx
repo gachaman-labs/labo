@@ -48,6 +48,7 @@ export default async function Insights({
       <section className="bg-bg-subtle">
         <div className="container-page section">
           <SectionTitle as="h1" eyebrow={t("eyebrow")} title={t("title")} desc={t("desc")} />
+          {locale === "ja" && getPosts().length ? <p className="mt-4 text-sm text-text-muted">{t("koOnlyNotice")}</p> : null}
           <a href="/rss.xml" className="mt-6 inline-block text-sm font-semibold text-accent">{t("rss")}</a>
         </div>
       </section>

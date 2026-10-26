@@ -1,7 +1,7 @@
 {
   "_todoJP": "TODO(JP): 以下の日本語は初稿です。ネイティブによる校正が必要です。未翻訳のキーは韓国語で表示されます。",
   "meta": {
-    "siteName": "トゥーハンズメタ",
+    "siteName": "Two Hands Meta",
     "defaultDescription": "日本進出を目指す韓国企業のための市場調査・戦略策定・営業実行パートナー。Two Hands Meta。",
     "home": {
       "title": "日本進出パートナー",
@@ -26,6 +26,18 @@
     "privacy": {
       "title": "プライバシーポリシー",
       "description": "Two Hands Metaのプライバシーポリシー。"
+    },
+    "industries": {
+      "title": "注力分野",
+      "description": "ゲーム、AI、コンテンツ、ソリューション、コスメティック分野の日本進出を支援します。"
+    },
+    "cases": {
+      "title": "主な実績",
+      "description": "Two Hands Metaの日本進出支援の実績。"
+    },
+    "insights": {
+      "title": "インサイト",
+      "description": "韓国企業が知りたい日本ビジネス情報を整理します。"
     }
   },
   "nav": {
@@ -137,7 +149,7 @@
       "career": "経歴",
       "current": "現職",
       "kimhyun": {
-        "name": "김현",
+        "name": "キム　ヒョン",
         "role": "代表取締役",
         "education": "ソウル大学校 材料工学部 卒業",
         "career": [
@@ -294,6 +306,49 @@
         "title": "コスメティック",
         "summary": "コスメティック分野の日本進出を支援します。"
       }
+    },
+    "sections": {
+      "market": "日本市場の特徴",
+      "support": "提供可能な支援",
+      "cases": "関連実績",
+      "ctaTitle": "この分野の日本進出をご検討中ですか?",
+      "ctaDesc": "状況をお聞かせいただければ、必要な支援範囲をご案内します。"
+    },
+    "noRelatedCases": "関連実績は準備中です。"
+  },
+  "cases": {
+    "eyebrow": "Cases",
+    "title": "主な実績",
+    "desc": "分野と年ごとに実績をご確認いただけます。",
+    "empty": "条件に合う実績はありません。",
+    "detailPending": "詳細は準備中です。",
+    "items": {
+      "ai-character-japan": {
+        "title": "AIキャラクター日本進出コンサルティング"
+      }
     }
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "title": "日本ビジネスインサイト",
+    "desc": "日本での事業に関して、韓国企業が知りたい内容を整理してお届けします。",
+    "categories": {
+      "market": "市場動向",
+      "legal": "契約・法務・税務の基礎",
+      "sales": "営業・商習慣",
+      "industry": "分野別",
+      "case": "進出事例"
+    },
+    "empty": "公開済みの記事はまだありません。",
+    "toc": "目次",
+    "related": "関連記事",
+    "draft": "草稿(構造確認用のダミー)",
+    "prev": "前へ",
+    "next": "次へ",
+    "page": "ページ",
+    "ctaTitle": "日本進出について、さらにご不明な点はありますか?",
+    "ctaDesc": "状況をお聞かせいただければ、お役に立てる方法をご案内します。",
+    "rss": "RSSを購読",
+    "koOnlyNotice": "記事は現在、韓国語のみで提供しています。"
   }
 }

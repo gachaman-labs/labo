@@ -43,6 +43,7 @@ export default async function InsightDetail({ params }: P) {
           <div className="max-w-3xl">
             <FieldTag>{t(`categories.${meta.category}`)}</FieldTag>
             {meta.draft ? <span className="ml-2 text-xs text-text-muted">{t("draft")}</span> : null}
+            {locale === "ja" ? <p className="mt-3 text-sm text-text-muted">{t("koOnlyNotice")}</p> : null}
             <h1 className="mt-4 text-primary">{meta.title}</h1>
             <time className="mt-3 block text-sm text-text-muted" dateTime={meta.date}>{meta.date}</time>
             <div className="prose-article mt-10">

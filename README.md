@@ -8,7 +8,7 @@ Next.js 15 (App Router) · TypeScript · Tailwind CSS 3 · next-intl · MDX
 ```bash
 npm install
 cp .env.example .env.local   # 값 채우기
-npm run dev                  # http://localhost:3000  (/ko, /ja)
+npm run dev                  # http://localhost:3000  (/ja 기본, /ko)
 npm run build && npm start
 ```
 
@@ -16,8 +16,8 @@ npm run build && npm start
 
 | 경로 | 내용 |
 |---|---|
-| `src/app/[locale]/` | 페이지 (`/ko` 기본, `/ja` 핵심 페이지) |
-| `messages/ko.json`, `ja.json` | 모든 문구. 일본어에 없는 키는 한국어로 대체됨 |
+| `src/app/[locale]/` | 페이지 (`/ja` 기본, `/ko`) |
+| `messages/ko.json`, `ja.json` | 모든 문구. 일본어 번역이 빠진 키는 한국어로 대체됨(현재는 누락 없음) |
 | `data/` | 교체할 값 (회사 정보, 서비스, 분야, 실적, 팀, 파트너) |
 | `content/blog/*.mdx` | 인사이트 글 (frontmatter: title, date, category, summary, draft) |
 

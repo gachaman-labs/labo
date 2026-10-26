@@ -1,12 +1,11 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["ko", "ja"],
-  defaultLocale: "ko",
+  locales: ["ja", "ko"],
+  defaultLocale: "ja",
   localePrefix: "always",
+  // 브라우저 언어와 상관없이 / 는 항상 기본 언어(일본어)로 보낸다. 한국어 방문자 자동 안내가 필요하면 true 로.
+  localeDetection: false,
 });
 
 export type Locale = (typeof routing.locales)[number];
-
-// 일본어를 1차로 제공하는 핵심 페이지. 그 외 일본어 경로는 한국어 문구로 대체되므로 noindex 처리한다.
-export const jaCorePaths = ["", "/about", "/services", "/contact", "/company", "/privacy"];
