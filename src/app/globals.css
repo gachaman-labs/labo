@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg text-text font-sans antialiased; font-size: 16px; line-height: 1.7; }
+  html[lang="ko"] body { word-break: keep-all; }
+  html[lang="ja"] body { line-height: 1.8; }
+  h1 { @apply text-[2rem] md:text-[3rem] font-bold leading-tight tracking-tight; }
+  h2 { @apply text-[1.75rem] md:text-[2rem] font-bold leading-snug; }
+  h3 { @apply text-xl md:text-[1.375rem] font-semibold leading-snug; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-accent; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold transition-colors; }
+  .btn-primary { @apply btn bg-accent text-white hover:bg-[#2459d9]; }
+  .btn-secondary { @apply btn border border-primary/30 text-primary hover:bg-bg-subtle; }
+  .btn-secondary-inv { @apply btn border border-white/50 text-white hover:bg-white/10; }
+  .section { @apply py-14 md:py-24; }
+  .container-page { @apply mx-auto w-full max-w-page px-5 md:px-8; }
+  .card { @apply rounded-card border border-border bg-white shadow-card; }
+}
+
+/* 짧은 페이드/슬라이드만 사용하고, 모션 감소 설정을 존중한다 */
+@keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fade-up .5s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-up { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+.prose-article { @apply text-text; }
+.prose-article h2 { @apply mt-12 mb-4 scroll-mt-24; }
+.prose-article h3 { @apply mt-8 mb-3 scroll-mt-24; }
+.prose-article p { @apply my-4; }
+.prose-article ul { @apply my-4 list-disc pl-6; }
+.prose-article ol { @apply my-4 list-decimal pl-6; }
+.prose-article a { @apply text-accent underline; }
+.prose-article blockquote { @apply my-6 border-l-4 border-accent/40 pl-4 text-text-muted; }
