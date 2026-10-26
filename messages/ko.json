@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "siteName": "투핸즈 메타",
+    "defaultDescription": "일본에 진출하는 한국 기업을 위한 시장 조사, 전략 수립, 영업 실행 파트너. 투핸즈 메타(Two Hands Meta).",
+    "home": { "title": "일본 진출 파트너", "description": "일본 현지 사업 경험을 바탕으로 한국 기업의 시장 조사부터 영업 실행까지 함께합니다." },
+    "about": { "title": "회사소개", "description": "투핸즈 메타의 미션과 대표 프로필을 소개합니다." },
+    "services": { "title": "서비스", "description": "일본 시장 조사부터 B2B 영업 대행까지, 일본 진출 로드맵에 따른 5가지 서비스." },
+    "industries": { "title": "주력 분야", "description": "게임, AI, 콘텐츠, 솔루션, 코스메틱 분야의 일본 진출을 지원합니다." },
+    "cases": { "title": "주요 실적", "description": "투핸즈 메타의 일본 진출 지원 실적." },
+    "insights": { "title": "인사이트", "description": "한국 기업이 궁금해하는 일본 비즈니스 정보를 정리합니다." },
+    "contact": { "title": "문의", "description": "일본 진출 관련 문의를 남겨 주세요." },
+    "company": { "title": "회사 개요", "description": "투핸즈 메타 회사 개요." },
+    "privacy": { "title": "개인정보처리방침", "description": "투핸즈 메타 개인정보처리방침." }
+  },
+  "nav": {
+    "about": "회사소개",
+    "services": "서비스",
+    "industries": "주력 분야",
+    "cases": "실적",
+    "insights": "인사이트",
+    "contact": "문의",
+    "cta": "문의하기",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기",
+    "language": "언어 전환",
+    "skip": "본문으로 건너뛰기"
+  },
+  "common": {
+    "learnMore": "자세히 보기",
+    "viewAll": "전체 보기",
+    "pending": "준비 중",
+    "stage": { "design": "설계", "execute": "실행" },
+    "stageLabel": "단계",
+    "contactCta": "문의하기",
+    "servicesCta": "서비스 보기",
+    "all": "전체",
+    "year": "연도",
+    "field": "분야",
+    "back": "목록으로"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Two Hands Meta",
+      "title": "일본 진출의 실패를 줄이고, 성공으로 연결합니다",
+      "sub": "일본 현지 사업 경험을 바탕으로 한국 기업의 시장 조사부터 영업 실행까지 함께합니다."
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "일본 진출 로드맵",
+      "desc": "진출의 근거를 만드는 설계 단계와, 현지에서 성과를 만드는 실행 단계로 구성됩니다."
+    },
+    "industries": { "eyebrow": "Industries", "title": "주력 분야", "desc": "분야별 특성에 맞춰 진출을 지원합니다." },
+    "cases": { "eyebrow": "Cases", "title": "주요 실적", "desc": "최근 수행한 일본 진출 지원 실적입니다.", "empty": "실적을 준비 중입니다." },
+    "process": {
+      "eyebrow": "Process",
+      "title": "진행 방식",
+      "desc": "문의에서 수행까지 다음 순서로 진행합니다. 단계별 소요 기간은 프로젝트에 따라 협의합니다.",
+      "duration": "소요 기간",
+      "steps": [
+        { "title": "문의", "desc": "진출 현황과 궁금한 점을 접수합니다." },
+        { "title": "진단", "desc": "현재 상황과 과제를 확인합니다." },
+        { "title": "제안", "desc": "범위와 방식을 담은 제안서를 전달합니다." },
+        { "title": "계약", "desc": "범위와 조건에 합의하고 계약합니다." },
+        { "title": "수행", "desc": "합의한 내용에 따라 수행하고 공유합니다." }
+      ]
+    },
+    "insights": { "eyebrow": "Insights", "title": "최신 인사이트", "desc": "일본 비즈니스에 관한 정리 글입니다.", "empty": "글을 준비 중입니다." },
+    "cta": { "title": "일본 진출, 먼저 상황을 들려주세요", "desc": "진출 단계와 고민을 알려 주시면 적합한 서비스를 안내해 드립니다.", "button": "문의하기" }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "회사소개",
+    "mission": {
+      "title": "미션",
+      "body": "한국 기업의 일본 진출에서 실패를 줄이고, 성공적인 진출을 위한 최적의 솔루션을 제공합니다."
+    },
+    "business": {
+      "title": "하는 일",
+      "body": "투핸즈 메타는 일본을 거점으로, 일본에 진출하는 한국 기업을 위한 B2B 에이전트 사업을 합니다. 시장 조사와 전략 수립에서 현지 네트워크 연결과 영업 대행까지 이어서 지원합니다."
+    },
+    "team": {
+      "title": "대표 프로필",
+      "photoAlt": "프로필 사진 (준비 중)",
+      "education": "학력",
+      "career": "경력",
+      "current": "현직",
+      "kimhyun": {
+        "name": "김현",
+        "role": "대표이사",
+        "education": "서울대학교 재료공학 졸업",
+        "career": ["메리츠증권 기업금융팀", "NC 일본 법인 경영 총괄 역임", "20년 이상 일본 시장 및 사업 경험"],
+        "current": "투핸즈 메타 대표이사"
+      }
+    },
+    "partners": { "title": "파트너 네트워크", "empty": "파트너 네트워크 정보를 준비 중입니다." }
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "서비스",
+    "desc": "일본 진출 단계에 맞춰 필요한 서비스를 선택하거나 함께 구성할 수 있습니다.",
+    "items": {
+      "market-research": { "title": "일본 시장 조사", "summary": "시장 규모, 경쟁 환경, 규제와 유통 구조를 조사해 진출 판단의 근거를 만듭니다." },
+      "go-to-market": { "title": "Go to Market 전략 수립", "summary": "목표 고객, 포지셔닝, 채널, 가격, 진입 시나리오를 설계합니다." },
+      "localization": { "title": "사업 모델 현지화 전략 수립", "summary": "일본 시장과 상관습에 맞게 제품·서비스·수익 모델을 조정합니다." },
+      "network": { "title": "영업 네트워크 연결", "summary": "현지 파트너, 유통사, 바이어와의 접점을 연결합니다." },
+      "b2b-sales": { "title": "B2B 영업 대행 및 영업 전략 수립", "summary": "일본 현지에서 영업을 대행하고, 영업 전략과 프로세스를 수립합니다." }
+    },
+    "sections": {
+      "overview": "서비스 개요",
+      "need": "이런 기업에 필요합니다",
+      "tasks": "수행 내용",
+      "deliverables": "산출물",
+      "process": "진행 방식",
+      "relatedCases": "관련 실적",
+      "ctaTitle": "이 서비스가 필요한지 먼저 상담해 보세요",
+      "ctaDesc": "현재 상황을 알려 주시면 적합한 범위를 안내해 드립니다."
+    },
+    "noRelatedCases": "관련 실적을 준비 중입니다."
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "주력 분야",
+    "desc": "분야별 일본 시장의 특성을 이해하고 그에 맞게 진출을 지원합니다.",
+    "items": {
+      "game": { "title": "게임", "summary": "게임 분야의 일본 진출을 지원합니다." },
+      "ai": { "title": "AI", "summary": "AI 서비스·기술의 일본 진출을 지원합니다." },
+      "content": { "title": "콘텐츠", "summary": "콘텐츠 분야의 일본 진출을 지원합니다." },
+      "solution": { "title": "솔루션", "summary": "B2B 솔루션의 일본 진출을 지원합니다." },
+      "cosmetics": { "title": "코스메틱", "summary": "코스메틱 분야의 일본 진출을 지원합니다." }
+    },
+    "sections": {
+      "market": "일본 시장 특징",
+      "support": "제공 가능한 지원",
+      "cases": "관련 실적",
+      "ctaTitle": "이 분야의 일본 진출을 고민 중이신가요?",
+      "ctaDesc": "상황을 알려 주시면 필요한 지원 범위를 안내해 드립니다."
+    },
+    "noRelatedCases": "관련 실적을 준비 중입니다."
+  },
+  "cases": {
+    "eyebrow": "Cases",
+    "title": "주요 실적",
+    "desc": "분야와 연도별로 실적을 확인할 수 있습니다.",
+    "empty": "조건에 맞는 실적이 없습니다.",
+    "detailPending": "상세 내용을 준비 중입니다.",
+    "items": {
+      "ai-character-japan": { "title": "AI 캐릭터 일본 진출 컨설팅" }
+    }
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "title": "일본 비즈니스 인사이트",
+    "desc": "일본 사업과 관련해 한국 기업이 궁금해하는 내용을 정리합니다.",
+    "categories": {
+      "market": "시장 동향",
+      "legal": "계약·법무·세무 기초",
+      "sales": "영업·상관습",
+      "industry": "분야별",
+      "case": "진출 사례"
+    },
+    "empty": "아직 게시된 글이 없습니다.",
+    "toc": "목차",
+    "related": "관련 글",
+    "draft": "초안 (구조 확인용 더미)",
+    "prev": "이전",
+    "next": "다음",
+    "page": "페이지",
+    "ctaTitle": "일본 진출에 대해 더 궁금한 점이 있으신가요?",
+    "ctaDesc": "상황을 알려 주시면 도움이 될 수 있는 방법을 안내해 드립니다.",
+    "rss": "RSS 구독"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "문의",
+    "desc": "일본 진출 현황과 궁금한 점을 남겨 주세요. 내용을 확인한 뒤 회신드립니다.",
+    "direct": { "title": "직접 연락", "email": "이메일", "booking": "미팅 예약", "bookingLink": "예약 페이지 열기" },
+    "form": {
+      "company": "회사명",
+      "name": "담당자명",
+      "email": "이메일",
+      "phone": "연락처 (선택)",
+      "services": "관심 서비스 (복수 선택)",
+      "industry": "관심 분야",
+      "industryPlaceholder": "선택해 주세요",
+      "message": "문의 내용",
+      "consent": "개인정보 수집·이용에 동의합니다.",
+      "consentLink": "개인정보처리방침 보기",
+      "submit": "문의 보내기",
+      "sending": "보내는 중…",
+      "required": "필수",
+      "success": "문의가 접수되었습니다. 확인 후 회신드리겠습니다.",
+      "error": "전송에 실패했습니다. 잠시 후 다시 시도해 주세요.",
+      "invalid": "입력 내용을 확인해 주세요.",
+      "tooMany": "요청이 많습니다. 잠시 후 다시 시도해 주세요."
+    }
+  },
+  "company": {
+    "title": "회사 개요",
+    "rows": {
+      "name": "상호",
+      "nameEn": "영문 상호",
+      "nameJa": "일본어 상호",
+      "representative": "대표자",
+      "established": "설립일",
+      "address": "소재지",
+      "registration": "사업자 정보",
+      "business": "사업 내용",
+      "phone": "전화",
+      "email": "이메일"
+    },
+    "businessValue": "일본 진출 한국 기업 대상 시장 조사, 전략 수립, 영업 네트워크 연결 및 영업 대행"
+  },
+  "privacy": {
+    "title": "개인정보처리방침",
+    "legalNote": "이 문서는 초안이며 게시 전 법무 검토가 필요합니다.",
+    "updated": "시행일",
+    "sections": [
+      { "title": "1. 수집하는 개인정보 항목", "body": "문의 접수 시 회사명, 담당자명, 이메일, 연락처(선택), 관심 서비스·분야, 문의 내용을 수집합니다." },
+      { "title": "2. 수집·이용 목적", "body": "문의 확인과 회신, 상담 및 서비스 제안을 위해 이용합니다." },
+      { "title": "3. 보유 및 이용 기간", "body": "목적 달성 후 지체 없이 파기합니다. 보유 기간: TODO" },
+      { "title": "4. 제3자 제공 및 처리 위탁", "body": "원칙적으로 제3자에게 제공하지 않습니다. 문의 메일 발송을 위해 외부 서비스를 사용하는 경우 수탁자와 위탁 업무를 이곳에 명시합니다. 수탁자: TODO" },
+      { "title": "5. 파기 절차 및 방법", "body": "보유 기간이 끝나거나 목적이 달성되면 전자적 파일은 복구할 수 없는 방법으로 삭제합니다." },
+      { "title": "6. 이용자의 권리", "body": "이용자는 언제든지 자신의 개인정보에 대한 열람, 정정, 삭제, 처리 정지를 요청할 수 있습니다." },
+      { "title": "7. 개인정보 문의처", "body": "책임자 및 연락처: TODO" }
+    ]
+  },
+  "footer": {
+    "representative": "대표자",
+    "address": "소재지",
+    "registration": "사업자 정보",
+    "contact": "연락처",
+    "links": { "company": "회사 개요", "privacy": "개인정보처리방침", "contact": "문의" },
+    "rights": "All rights reserved."
+  }
+}

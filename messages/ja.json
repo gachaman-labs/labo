@@ -1,0 +1,314 @@
+{
+  "_todoJP": "TODO(JP): 以下の日本語は初稿です。ネイティブによる校正が必要です。未翻訳のキーは韓国語で表示されます。",
+  "meta": {
+    "siteName": "トゥーハンズメタ",
+    "defaultDescription": "日本進出を目指す韓国企業のための市場調査・戦略策定・営業実行パートナー。Two Hands Meta。",
+    "home": {
+      "title": "日本進出パートナー",
+      "description": "日本での事業経験を踏まえ、韓国企業の市場調査から営業実行までを支援します。"
+    },
+    "about": {
+      "title": "会社紹介",
+      "description": "Two Hands Metaのミッションと代表プロフィール。"
+    },
+    "services": {
+      "title": "サービス",
+      "description": "日本市場調査からB2B営業代行まで、進出ロードマップに沿った5つのサービス。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "description": "日本進出に関するご相談はこちらから。"
+    },
+    "company": {
+      "title": "会社概要",
+      "description": "Two Hands Metaの会社概要。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "description": "Two Hands Metaのプライバシーポリシー。"
+    }
+  },
+  "nav": {
+    "about": "会社紹介",
+    "services": "サービス",
+    "industries": "注力分野",
+    "cases": "実績",
+    "insights": "インサイト",
+    "contact": "お問い合わせ",
+    "cta": "お問い合わせ",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "language": "言語切替",
+    "skip": "本文へスキップ"
+  },
+  "common": {
+    "learnMore": "詳しく見る",
+    "viewAll": "一覧を見る",
+    "pending": "準備中",
+    "stage": {
+      "design": "設計",
+      "execute": "実行"
+    },
+    "stageLabel": "段階",
+    "contactCta": "お問い合わせ",
+    "servicesCta": "サービスを見る",
+    "all": "すべて",
+    "year": "年",
+    "field": "分野",
+    "back": "一覧へ戻る"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Two Hands Meta",
+      "title": "日本進出の失敗を減らし、成功へつなげます",
+      "sub": "日本での事業経験を踏まえ、韓国企業の市場調査から営業実行までを共に進めます。"
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "日本進出ロードマップ",
+      "desc": "進出の根拠をつくる「設計」段階と、現地で成果をつくる「実行」段階で構成されます。"
+    },
+    "industries": {
+      "eyebrow": "Industries",
+      "title": "注力分野",
+      "desc": "分野ごとの特性に合わせて進出を支援します。"
+    },
+    "cases": {
+      "eyebrow": "Cases",
+      "title": "主な実績",
+      "desc": "最近手がけた日本進出支援の実績です。",
+      "empty": "実績は準備中です。"
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "進め方",
+      "desc": "お問い合わせから実施まで、次の流れで進めます。所要期間はご相談のうえ決定します。",
+      "duration": "所要期間",
+      "steps": [
+        {
+          "title": "お問い合わせ",
+          "desc": "進出状況とご相談内容を伺います。"
+        },
+        {
+          "title": "診断",
+          "desc": "現状と課題を確認します。"
+        },
+        {
+          "title": "ご提案",
+          "desc": "範囲と進め方をまとめた提案書をお渡しします。"
+        },
+        {
+          "title": "契約",
+          "desc": "範囲と条件に合意のうえ契約します。"
+        },
+        {
+          "title": "実施",
+          "desc": "合意内容に沿って実施し、状況を共有します。"
+        }
+      ]
+    },
+    "insights": {
+      "eyebrow": "Insights",
+      "title": "最新インサイト",
+      "desc": "日本ビジネスに関する解説記事です。",
+      "empty": "記事は準備中です。"
+    },
+    "cta": {
+      "title": "日本進出について、まずは状況をお聞かせください",
+      "desc": "進出段階やお悩みを伺い、適したサービスをご案内します。",
+      "button": "お問い合わせ"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "会社紹介",
+    "mission": {
+      "title": "ミッション",
+      "body": "韓国企業の日本進出における失敗を減らし、成功に向けた最適なソリューションを提供します。"
+    },
+    "business": {
+      "title": "事業内容",
+      "body": "Two Hands Metaは日本を拠点に、日本進出を目指す韓国企業向けのB2Bエージェント事業を行っています。市場調査・戦略策定から、現地ネットワークの接続、営業代行まで一貫して支援します。"
+    },
+    "team": {
+      "title": "代表プロフィール",
+      "photoAlt": "プロフィール写真(準備中)",
+      "education": "学歴",
+      "career": "経歴",
+      "current": "現職",
+      "kimhyun": {
+        "name": "김현",
+        "role": "代表取締役",
+        "education": "ソウル大学校 材料工学部 卒業",
+        "career": [
+          "メリッツ証券 企業金融チーム",
+          "NC日本法人 経営統括を歴任",
+          "20年以上の日本市場・事業経験"
+        ],
+        "current": "Two Hands Meta 代表取締役"
+      }
+    },
+    "partners": {
+      "title": "パートナーネットワーク",
+      "empty": "パートナーネットワークの情報は準備中です。"
+    }
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "サービス",
+    "desc": "進出段階に合わせて、必要なサービスを選択、または組み合わせてご利用いただけます。",
+    "items": {
+      "market-research": {
+        "title": "日本市場調査",
+        "summary": "市場規模、競合環境、規制と流通構造を調査し、進出判断の根拠をつくります。"
+      },
+      "go-to-market": {
+        "title": "Go to Market戦略策定",
+        "summary": "ターゲット顧客、ポジショニング、チャネル、価格、参入シナリオを設計します。"
+      },
+      "localization": {
+        "title": "事業モデル現地化戦略策定",
+        "summary": "日本市場と商習慣に合わせて、製品・サービス・収益モデルを調整します。"
+      },
+      "network": {
+        "title": "営業ネットワーク接続",
+        "summary": "現地のパートナー、流通会社、バイヤーとの接点をつなぎます。"
+      },
+      "b2b-sales": {
+        "title": "B2B営業代行・営業戦略策定",
+        "summary": "日本現地で営業を代行し、営業戦略とプロセスを策定します。"
+      }
+    },
+    "sections": {
+      "overview": "サービス概要",
+      "need": "こんな企業に必要です",
+      "tasks": "実施内容",
+      "deliverables": "成果物",
+      "process": "進め方",
+      "relatedCases": "関連実績",
+      "ctaTitle": "このサービスが必要か、まずご相談ください",
+      "ctaDesc": "現在の状況を伺い、適した範囲をご案内します。"
+    },
+    "noRelatedCases": "関連実績は準備中です。"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "お問い合わせ",
+    "desc": "日本進出の状況やご相談内容をお寄せください。内容を確認のうえ、ご連絡いたします。",
+    "direct": {
+      "title": "直接のご連絡",
+      "email": "メール",
+      "booking": "ミーティング予約",
+      "bookingLink": "予約ページを開く"
+    },
+    "form": {
+      "company": "会社名",
+      "name": "ご担当者名",
+      "email": "メールアドレス",
+      "phone": "電話番号(任意)",
+      "services": "ご関心のあるサービス(複数選択可)",
+      "industry": "ご関心のある分野",
+      "industryPlaceholder": "選択してください",
+      "message": "お問い合わせ内容",
+      "consent": "個人情報の取得・利用に同意します。",
+      "consentLink": "プライバシーポリシーを見る",
+      "submit": "送信する",
+      "sending": "送信中…",
+      "required": "必須",
+      "success": "お問い合わせを受け付けました。確認のうえ、ご連絡いたします。",
+      "error": "送信に失敗しました。しばらくしてからもう一度お試しください。",
+      "invalid": "入力内容をご確認ください。",
+      "tooMany": "リクエストが集中しています。しばらくしてからもう一度お試しください。"
+    }
+  },
+  "company": {
+    "title": "会社概要",
+    "rows": {
+      "name": "商号",
+      "nameEn": "英文商号",
+      "nameJa": "日本語商号",
+      "representative": "代表者",
+      "established": "設立日",
+      "address": "所在地",
+      "registration": "事業者情報",
+      "business": "事業内容",
+      "phone": "電話",
+      "email": "メール"
+    },
+    "businessValue": "日本進出を目指す韓国企業向けの市場調査、戦略策定、営業ネットワーク接続および営業代行"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "legalNote": "この文書は草案であり、公開前に法務確認が必要です。",
+    "updated": "施行日",
+    "sections": [
+      {
+        "title": "1. 取得する個人情報",
+        "body": "お問い合わせ時に、会社名、ご担当者名、メールアドレス、電話番号(任意)、ご関心のサービス・分野、お問い合わせ内容を取得します。"
+      },
+      {
+        "title": "2. 利用目的",
+        "body": "お問い合わせの確認と返信、ご相談およびサービスのご提案のために利用します。"
+      },
+      {
+        "title": "3. 保有期間",
+        "body": "利用目的の達成後、速やかに破棄します。保有期間:TODO"
+      },
+      {
+        "title": "4. 第三者提供・委託",
+        "body": "原則として第三者に提供しません。お問い合わせメールの送信に外部サービスを利用する場合は、委託先と委託業務をここに明記します。委託先:TODO"
+      },
+      {
+        "title": "5. 破棄の方法",
+        "body": "保有期間が終了した場合または目的が達成された場合、電子ファイルは復元できない方法で削除します。"
+      },
+      {
+        "title": "6. ご本人の権利",
+        "body": "ご本人は、いつでも個人情報の開示、訂正、削除、利用停止を請求できます。"
+      },
+      {
+        "title": "7. お問い合わせ窓口",
+        "body": "責任者および連絡先:TODO"
+      }
+    ]
+  },
+  "footer": {
+    "representative": "代表者",
+    "address": "所在地",
+    "registration": "事業者情報",
+    "contact": "連絡先",
+    "links": {
+      "company": "会社概要",
+      "privacy": "プライバシーポリシー",
+      "contact": "お問い合わせ"
+    },
+    "rights": "All rights reserved."
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "注力分野",
+    "desc": "分野ごとの日本市場の特性を踏まえ、進出を支援します。",
+    "items": {
+      "game": {
+        "title": "ゲーム",
+        "summary": "ゲーム分野の日本進出を支援します。"
+      },
+      "ai": {
+        "title": "AI",
+        "summary": "AIサービス・技術の日本進出を支援します。"
+      },
+      "content": {
+        "title": "コンテンツ",
+        "summary": "コンテンツ分野の日本進出を支援します。"
+      },
+      "solution": {
+        "title": "ソリューション",
+        "summary": "B2Bソリューションの日本進出を支援します。"
+      },
+      "cosmetics": {
+        "title": "コスメティック",
+        "summary": "コスメティック分野の日本進出を支援します。"
+      }
+    }
+  }
+}
