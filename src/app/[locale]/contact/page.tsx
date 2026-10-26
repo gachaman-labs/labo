@@ -2,23 +2,19 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
 import { company } from "@data/site";
-import { services } from "@data/services";
-import { industries } from "@data/industries";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { TodoText } from "@/components/ui/Todo";
-import { ContactForm } from "@/components/ContactForm";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return pageMetadata({ locale, path: "/contact", titleKey: "contact" });
 }
 
+// 문의는 채널톡(우하단 위젯)으로 받는다. 키는 NEXT_PUBLIC_CHANNEL_IO_PLUGIN_KEY. 아직 연결 전이다.
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
-  const ts = await getTranslations("services.items");
-  const ti = await getTranslations("industries.items");
 
   return (
     <>
@@ -28,12 +24,12 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
         </div>
       </section>
       <section className="section">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_320px]">
-          <ContactForm
-            services={services.map((s) => ({ id: s.slug, label: ts(`${s.slug}.title`) }))}
-            industries={industries.map((i) => ({ id: i.slug, label: ti(`${i.slug}.title`) }))}
-          />
-          <aside className="card h-fit p-6">
+        <div className="container-page grid gap-6 md:grid-cols-2">
+          <div className="card p-6">
+            <h2 className="text-xl text-primary">{t("channel.title")}</h2>
+            <p className="mt-3 text-text-muted">{t("channel.body")}</p>
+          </div>
+          <div className="card p-6">
             <h2 className="text-xl text-primary">{t("direct.title")}</h2>
             <dl className="mt-4 space-y-4 text-sm">
               <div>
@@ -51,7 +47,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                 </dd>
               </div>
             </dl>
-          </aside>
+          </div>
         </div>
       </section>
     </>
