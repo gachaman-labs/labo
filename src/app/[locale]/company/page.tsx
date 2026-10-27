@@ -17,9 +17,9 @@ export default async function Company({ params }: { params: Promise<{ locale: st
   const t = await getTranslations("company");
   const rep = locale === "ja" ? company.representativeJa : company.representative;
   const rows: [string, React.ReactNode][] = [
-    [t("rows.name"), locale === "ja" ? (company.nameJa !== "TODO" ? company.nameJa : company.nameEn) : company.nameKo],
+    [t("rows.name"), locale === "ja" ? company.nameJa : company.nameKo],
     [t("rows.nameEn"), company.nameEn],
-    [t("rows.nameJa"), <TodoText key="ja" value={company.nameJa} />],
+    [t("rows.nameJa"), company.nameJa],
     [t("rows.representative"), rep],
     [t("rows.established"), <TodoText key="est" value={company.established} />],
     [t("rows.address"), <TodoText key="addr" value={company.address} />],

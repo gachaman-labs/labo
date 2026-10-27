@@ -1,15 +1,15 @@
 {
   "_todoJP": "TODO(JP): 以下の日本語は初稿です。ネイティブによる校正が必要です。未翻訳のキーは韓国語で表示されます。",
   "meta": {
-    "siteName": "Two Hands Meta",
-    "defaultDescription": "日本進出を目指す韓国企業のための市場調査・戦略策定・営業実行パートナー。Two Hands Meta。",
+    "siteName": "ツーハンズメタ",
+    "defaultDescription": "日本進出を目指す韓国企業のための市場調査・戦略策定・営業実行パートナー。ツーハンズメタ。",
     "home": {
       "title": "日本進出パートナー",
       "description": "日本での事業経験を踏まえ、韓国企業の市場調査から営業実行までを支援します。"
     },
     "about": {
       "title": "会社紹介",
-      "description": "Two Hands Metaのミッションと代表プロフィール。"
+      "description": "ツーハンズメタのミッションと代表プロフィール。"
     },
     "services": {
       "title": "サービス",
@@ -21,11 +21,11 @@
     },
     "company": {
       "title": "会社概要",
-      "description": "Two Hands Metaの会社概要。"
+      "description": "ツーハンズメタの会社概要。"
     },
     "privacy": {
       "title": "プライバシーポリシー",
-      "description": "Two Hands Metaのプライバシーポリシー。"
+      "description": "ツーハンズメタのプライバシーポリシー。"
     },
     "industries": {
       "title": "注力分野",
@@ -33,7 +33,7 @@
     },
     "cases": {
       "title": "主な実績",
-      "description": "Two Hands Metaの日本進出支援の実績。"
+      "description": "ツーハンズメタの日本進出支援の実績。"
     },
     "insights": {
       "title": "インサイト",
@@ -71,7 +71,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Two Hands Meta",
+      "eyebrow": "twohandsmeta",
       "title": "日本進出の失敗を減らし、成功へつなげます",
       "sub": "日本での事業経験を踏まえ、韓国企業の市場調査から営業実行までを共に進めます。"
     },
@@ -140,7 +140,7 @@
     },
     "business": {
       "title": "事業内容",
-      "body": "Two Hands Metaは日本を拠点に、日本進出を目指す韓国企業向けのB2Bエージェント事業を行っています。市場調査・戦略策定から、現地ネットワークの接続、営業代行まで一貫して支援します。"
+      "body": "ツーハンズメタは日本を拠点に、日本進出を目指す韓国企業向けのB2Bエージェント事業を行っています。市場調査・戦略策定から、現地ネットワークの接続、営業代行まで一貫して支援します。"
     },
     "team": {
       "title": "代表プロフィール",
@@ -157,7 +157,7 @@
           "NC日本法人 経営統括を歴任",
           "20年以上の日本市場・事業経験"
         ],
-        "current": "Two Hands Meta 代表取締役"
+        "current": "株式会社ツーハンズメタ 代表取締役"
       }
     },
     "partners": {

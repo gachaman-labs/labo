@@ -15,7 +15,10 @@ import { Todo } from "@/components/ui/Todo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return pageMetadata({ locale, path: "", titleKey: "home" });
+  const meta = await pageMetadata({ locale, path: "", titleKey: "home" });
+  const t = await getTranslations({ locale, namespace: "meta" });
+  // 홈은 title template 이 적용되지 않으므로 회사명을 직접 붙인다.
+  return { ...meta, title: { absolute: `${t("siteName")} | ${t("home.title")}` } };
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -37,7 +40,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <>
       <section className="bg-primary text-white">
         <div className="container-page section">
-          <p className="fade-up mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-white/80">
+          <p className="fade-up mb-5 flex items-center gap-2 text-sm font-semibold tracking-widest text-white/80">
             <span aria-hidden className="h-2 w-2 rounded-full bg-highlight" />
             {t("hero.eyebrow")}
           </p>

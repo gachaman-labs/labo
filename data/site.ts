@@ -4,9 +4,9 @@ export const TODO = "TODO" as const;
 export const isTodo = (v: unknown): boolean => v === TODO;
 
 export const company = {
-  nameKo: "투핸즈 메타",
-  nameEn: "Two Hands Meta",
-  nameJa: TODO, // TODO(JP): 일본어 상호 표기 확정 필요
+  nameKo: "주식회사 투핸즈메타",
+  nameEn: "twohandsmeta Inc.",
+  nameJa: "株式会社ツーハンズメタ",
   representative: "김현",
   representativeJa: "キム　ヒョン",
   established: TODO,

@@ -1,4 +1,4 @@
-# 투핸즈 메타 (Two Hands Meta) 홈페이지
+# 투핸즈메타 (twohandsmeta) 홈페이지
 
 일본에 진출하는 한국 기업 대상 B2B 에이전트 사업 소개 사이트.
 Next.js 15 (App Router) · TypeScript · Tailwind CSS 3 · next-intl · MDX
@@ -23,7 +23,7 @@ npm run build && npm start
 
 ## 교체해야 할 값 (TODO)
 
-`data/site.ts`: 일본어 상호, 소재지, 사업자 정보, 연락처, 설립일 · `data/team.ts`: 프로필 사진 ·
+`data/site.ts`: 소재지, 사업자 정보, 연락처, 설립일 · `data/team.ts`: 프로필 사진 ·
 `data/partners.ts`: 파트너 · `data/cases.ts`: 2026년 실적 2건(`published: true`로 변경) ·
 `messages/ja.json`: 일본어 검수(`TODO(JP)`) · 서비스/분야 세부 문구, 진행 기간 ·
 개인정보처리방침·회사 개요(법무 검토) · 도메인(`NEXT_PUBLIC_SITE_URL`) · 채널톡 키 · OG 이미지.

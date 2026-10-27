@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -34,8 +35,8 @@ export function Header() {
       className={`sticky top-0 z-40 transition-colors ${scrolled || open ? "border-b border-border bg-white" : "bg-white/80 backdrop-blur"}`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="text-lg font-bold text-primary">
-          Two Hands Meta
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="twohandsmeta" width={1438} height={170} priority className="h-6 w-auto" />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
