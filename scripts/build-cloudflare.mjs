@@ -55,16 +55,21 @@ if (res.status !== 0) process.exit(res.status ?? 1);
 
 const out = path.join(root, "out");
 const defaultLocale = "ja";
+// 검색엔진 노출은 기본 차단. 정식 공개 때 NEXT_PUBLIC_ALLOW_INDEXING=true 로 다시 빌드한다.
+const allowIndexing = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 
 // / 는 기본 언어로 보낸다. (_redirects 는 Cloudflare Pages 가 읽고, index.html 은 안전장치)
 fs.writeFileSync(path.join(out, "_redirects"), `/ /${defaultLocale} 302\n`);
 fs.writeFileSync(
   path.join(out, "index.html"),
-  `<!doctype html><html lang="${defaultLocale}"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/${defaultLocale}"><link rel="canonical" href="/${defaultLocale}"><title>twohandsmeta</title></head><body><a href="/${defaultLocale}">/${defaultLocale}</a></body></html>\n`,
+  `<!doctype html><html lang="${defaultLocale}"><head><meta charset="utf-8"><meta name="robots" content="${allowIndexing ? "index" : "noindex, nofollow"}"><meta http-equiv="refresh" content="0;url=/${defaultLocale}"><link rel="canonical" href="/${defaultLocale}"><title>twohandsmeta</title></head><body><a href="/${defaultLocale}">/${defaultLocale}</a></body></html>\n`,
 );
 
 // 확장자 없는 OG 이미지 파일의 형식을 알려 준다. (링크 미리보기 크롤러가 이미지로 인식하도록)
-fs.writeFileSync(path.join(out, "_headers"), "/opengraph-image\n  Content-Type: image/png\n");
+fs.writeFileSync(
+  path.join(out, "_headers"),
+  "/opengraph-image\n  Content-Type: image/png\n" + (allowIndexing ? "" : "\n/*\n  X-Robots-Tag: noindex, nofollow\n"),
+);
 
 // 없는 주소용 404 (Cloudflare Pages 는 out/404.html 을 자동으로 사용한다)
 fs.writeFileSync(

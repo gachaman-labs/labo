@@ -7,6 +7,7 @@ import { siteUrl, company } from "@data/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ChannelTalk } from "@/components/ChannelTalk";
+import { allowIndexing, noIndexRobots } from "@/lib/indexing";
 import { JsonLd } from "@/components/JsonLd";
 import "../globals.css";
 
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t("defaultDescription"),
     openGraph: { siteName: t("siteName"), type: "website", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "twohandsmeta" }] },
     twitter: { card: "summary_large_image" },
+    ...(allowIndexing ? {} : { robots: noIndexRobots }),
   };
 }
 

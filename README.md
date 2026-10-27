@@ -29,6 +29,21 @@ npm run build && npm start
 개인정보처리방침·회사 개요(법무 검토) · 도메인(`NEXT_PUBLIC_SITE_URL`) · 채널톡 키.
 값이 `TODO`인 항목은 화면에 "준비 중"으로 표시된다.
 
+## 검색엔진 노출 (기본: 차단)
+
+정식 공개 전에는 검색엔진에 잡히지 않도록 **기본값이 차단**이다. `NEXT_PUBLIC_ALLOW_INDEXING=true`로 빌드해야 풀린다.
+
+| 상태 | 차단(기본) | 공개(`NEXT_PUBLIC_ALLOW_INDEXING=true`) |
+|---|---|---|
+| 페이지 `<meta name="robots">` | `noindex, nofollow` | 없음 (일본어 인사이트·404만 noindex 유지) |
+| 응답 헤더 `X-Robots-Tag` | `noindex, nofollow` (Vercel은 `next.config.ts`, Cloudflare는 `out/_headers`) | 없음 |
+| `robots.txt` | `Disallow: /` | `Allow: /` + sitemap |
+| `sitemap.xml` | 비어 있음 | 전체 주소 |
+
+- 값은 빌드할 때 정해지므로 바꾸면 다시 빌드·배포해야 한다. Vercel은 환경변수를 바꾼 뒤 Redeploy.
+- 정식 공개할 때 `NEXT_PUBLIC_SITE_URL`(실제 도메인)과 함께 이 값을 `true`로 바꾸는 것을 잊지 말 것.
+- 이미 검색결과에 올라간 주소는 이 설정만으로 바로 사라지지 않는다. 처음부터 차단된 상태로 배포하는 것이 안전하다.
+
 ## 배포 (Vercel)
 
 Vercel에 저장소를 연결하고 `.env.example`의 환경변수를 등록한다.
