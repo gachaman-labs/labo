@@ -35,3 +35,19 @@ Vercel에 저장소를 연결하고 `.env.example`의 환경변수를 등록한�
 
 - 문의는 채널톡으로 받는다. `NEXT_PUBLIC_CHANNEL_IO_PLUGIN_KEY`를 설정하면 활성화되고, 비어 있으면 연결 전 상태(아무것도 표시 안 함)이다. 문의 폼은 없다.
 - 초안 글은 운영 환경에서 숨겨진다. 보이려면 `NEXT_PUBLIC_SHOW_DRAFTS=true`.
+
+## 배포 (Cloudflare Pages, 정적 파일)
+
+Vercel 배포와 별개로, 같은 코드를 서버 없이 올리는 정적 파일(`out/`)로 빌드할 수 있다. GitHub 연결은 필요 없다.
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://<프로젝트>.pages.dev npm run build:cloudflare
+```
+
+1. 위 명령이 `out/` 폴더를 만든다. (`/` → `/ja` 이동용 `_redirects`, 404 페이지, OG 이미지용 `_headers` 포함)
+2. Cloudflare 대시보드 → Workers & Pages → Create → Pages → **Direct Upload**에서 `out/` 폴더(또는 zip)를 올린다.
+   명령어로는 `npx wrangler pages deploy out`.
+3. 환경변수는 빌드할 때 정해지므로, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CHANNEL_IO_PLUGIN_KEY` 등을 바꾸면 다시 빌드해서 올려야 한다.
+
+정적 빌드에서는 `src/middleware.ts`와 `src/app/[locale]/[...rest]`가 쓰이지 않는다(스크립트가 빌드하는 동안만 치우고 끝나면 되돌린다).
+공개된 블로그 글이 없으면 `insights/[slug]`도 같이 치운다. 기본 빌드(`npm run build`, Vercel)는 영향이 없다.
