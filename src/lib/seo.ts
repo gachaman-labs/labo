@@ -21,7 +21,14 @@ export async function pageMetadata({ locale, path, titleKey, title, description 
     title: resolvedTitle,
     description: resolvedDescription,
     alternates: { canonical: hasJa ? url : `${siteUrl}/ko${path}`, languages },
-    openGraph: { title: resolvedTitle, description: resolvedDescription, url, locale: locale === "ja" ? "ja_JP" : "ko_KR", type: "website" },
+    openGraph: {
+      title: resolvedTitle,
+      description: resolvedDescription,
+      url,
+      locale: locale === "ja" ? "ja_JP" : "ko_KR",
+      type: "website",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "twohandsmeta" }],
+    },
     robots: locale === "ja" && !hasJa ? { index: false, follow: true } : undefined,
   };
 }

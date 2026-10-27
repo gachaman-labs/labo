@@ -26,7 +26,7 @@ npm run build && npm start
 `data/site.ts`: 소재지, 사업자 정보, 연락처, 설립일 · `data/team.ts`: 프로필 사진 ·
 `data/partners.ts`: 파트너 · `data/cases.ts`: 2026년 실적 2건(`published: true`로 변경) ·
 `messages/ja.json`: 일본어 검수(`TODO(JP)`) · 서비스/분야 세부 문구, 진행 기간 ·
-개인정보처리방침·회사 개요(법무 검토) · 도메인(`NEXT_PUBLIC_SITE_URL`) · 채널톡 키 · OG 이미지.
+개인정보처리방침·회사 개요(법무 검토) · 도메인(`NEXT_PUBLIC_SITE_URL`) · 채널톡 키.
 값이 `TODO`인 항목은 화면에 "준비 중"으로 표시된다.
 
 ## 배포 (Vercel)
