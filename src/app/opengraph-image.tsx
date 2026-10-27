@@ -5,6 +5,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "twohandsmeta";
+export const dynamic = "force-static";
 
 // 모든 페이지가 공유하는 링크 미리보기 이미지. 로고(public/logo-white.png)를 남색 배경 가운데에 둔다.
 // 기본 폰트에는 한글·일본어 글리프가 없어 글자는 넣지 않는다.

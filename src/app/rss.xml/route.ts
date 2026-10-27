@@ -3,6 +3,8 @@ import { siteUrl } from "@data/site";
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+export const dynamic = "force-static";
+
 export function GET() {
   const items = getPosts()
     .map(

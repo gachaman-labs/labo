@@ -6,6 +6,8 @@ import { industries } from "@data/industries";
 import { publishedCases } from "@data/cases";
 import { getPosts } from "@/lib/blog";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "", "/about", "/services", "/industries", "/cases", "/insights", "/contact", "/company", "/privacy",
