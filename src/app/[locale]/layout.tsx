@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: `${t("siteName")} | Two Hands Meta`, template: `%s | ${t("siteName")}` },
+    title: { default: `${t("siteName")} | twohandsmeta`, template: `%s | ${t("siteName")}` },
     description: t("defaultDescription"),
     openGraph: { siteName: t("siteName"), type: "website" },
   };
@@ -63,7 +63,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             "@context": "https://schema.org",
             "@type": "Organization",
             name: company.nameEn,
-            alternateName: company.nameKo,
+            alternateName: [company.nameKo, company.nameJa],
+            logo: `${siteUrl}/logo.png`,
             url: siteUrl,
             founder: { "@type": "Person", name: company.representative },
           }}

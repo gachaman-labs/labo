@@ -6,7 +6,9 @@
   html { scroll-behavior: smooth; }
   body { @apply bg-bg text-text font-sans antialiased; font-size: 16px; line-height: 1.7; }
   html[lang="ko"] body { word-break: keep-all; }
-  html[lang="ja"] body { line-height: 1.8; }
+  html[lang="ja"] body { line-height: 1.8; word-break: auto-phrase; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
   h1 { @apply text-[2rem] md:text-[3rem] font-bold leading-tight tracking-tight; }
   h2 { @apply text-[1.75rem] md:text-[2rem] font-bold leading-snug; }
   h3 { @apply text-xl md:text-[1.375rem] font-semibold leading-snug; }

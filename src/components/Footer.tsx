@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { company } from "@data/site";
@@ -5,7 +6,7 @@ import { TodoText } from "@/components/ui/Todo";
 
 export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
-  const name = locale === "ja" ? (company.nameJa !== "TODO" ? company.nameJa : company.nameEn) : company.nameKo;
+  const name = locale === "ja" ? company.nameJa : company.nameKo;
   const rep = locale === "ja" ? company.representativeJa : company.representative;
   const contact = company.email !== "TODO" ? company.email : company.phone;
 
@@ -14,9 +15,9 @@ export async function Footer({ locale }: { locale: string }) {
       <div className="container-page py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <p className="text-lg font-bold text-white">
-              {name}
-              {name !== company.nameEn ? <span className="font-normal text-white/70"> ({company.nameEn})</span> : null}
+            <Image src="/logo-white.png" alt="twohandsmeta" width={1438} height={170} className="h-6 w-auto" />
+            <p className="mt-4 text-lg font-bold text-white">
+              {name} <span className="font-normal text-white/70">({company.nameEn})</span>
             </p>
             <dl className="mt-4 space-y-1 text-sm">
               <div className="flex gap-2"><dt>{t("representative")}</dt><dd>{rep}</dd></div>
@@ -32,7 +33,7 @@ export async function Footer({ locale }: { locale: string }) {
           </nav>
         </div>
         <p className="mt-10 border-t border-white/15 pt-6 text-xs text-white/70">
-          © {new Date().getFullYear()} {company.nameEn}. {t("rights")}
+          © {new Date().getFullYear()} {company.nameEn} {t("rights")}
         </p>
       </div>
     </footer>
