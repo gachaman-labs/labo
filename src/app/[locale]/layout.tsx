@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(siteUrl),
     title: { default: `${t("siteName")} | twohandsmeta`, template: `%s | ${t("siteName")}` },
     description: t("defaultDescription"),
-    openGraph: { siteName: t("siteName"), type: "website" },
+    openGraph: { siteName: t("siteName"), type: "website", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "twohandsmeta" }] },
+    twitter: { card: "summary_large_image" },
   };
 }
 
