@@ -1,11 +1,19 @@
 // Cloudflare Pages(정적 호스팅)용 빌드. 결과는 out/ 폴더이며 그대로 업로드하면 된다.
 //   npm run build:cloudflare
-// 기본 빌드(Vercel)는 건드리지 않는다. 정적 내보내기에서 쓸 수 없는 파일 두 개는 빌드하는 동안만 치워 두고
-// 끝나면(실패해도) 원래 자리로 되돌린다.
+//   npm run build:cloudflare              미리보기용: twohandsmeta.pages.dev 주소, 검색엔진 노출 차단
+//   npm run build:cloudflare -- --launch  정식 공개용: twohandsmeta.co.jp 주소, 노출 허용
+// 정적 내보내기에서 쓸 수 없는 파일 두 개는 빌드하는 동안만 치워 두고 끝나면(실패해도) 원래 자리로 되돌린다.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+
+const PREVIEW_URL = "https://twohandsmeta.pages.dev"; // Cloudflare Pages 프로젝트 이름: twohandsmeta
+const LAUNCH_URL = "https://twohandsmeta.co.jp";
+const launch = process.argv.includes("--launch");
+// 환경변수로 직접 지정하면 그 값을 우선한다.
+process.env.NEXT_PUBLIC_SITE_URL ||= launch ? LAUNCH_URL : PREVIEW_URL;
+if (launch) process.env.NEXT_PUBLIC_ALLOW_INDEXING ||= "true";
 
 const root = process.cwd();
 const hold = path.join(root, ".cf-hold");
@@ -80,4 +88,6 @@ fs.writeFileSync(
 );
 
 const count = (dir) => fs.readdirSync(dir, { withFileTypes: true }).reduce((n, e) => n + (e.isDirectory() ? count(path.join(dir, e.name)) : 1), 0);
-console.log(`\nCloudflare Pages용 정적 파일 ${count(out)}개를 out/ 에 만들었습니다.`);
+console.log(
+  `\nCloudflare Pages용 정적 파일 ${count(out)}개를 out/ 에 만들었습니다.\n  주소: ${process.env.NEXT_PUBLIC_SITE_URL}\n  검색엔진 노출: ${allowIndexing ? "허용" : "차단"}`,
+);
