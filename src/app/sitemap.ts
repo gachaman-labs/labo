@@ -5,10 +5,12 @@ import { services } from "@data/services";
 import { industries } from "@data/industries";
 import { publishedCases } from "@data/cases";
 import { getPosts } from "@/lib/blog";
+import { allowIndexing } from "@/lib/indexing";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!allowIndexing) return [];
   const paths = [
     "", "/about", "/services", "/industries", "/cases", "/insights", "/contact", "/company", "/privacy",
     ...services.map((s) => `/services/${s.slug}`),

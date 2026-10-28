@@ -1,11 +1,27 @@
-// Cloudflare Pages(정적 호스팅)용 빌드. 결과는 out/ 폴더이며 그대로 업로드하면 된다.
-//   npm run build:cloudflare
-// 기본 빌드(Vercel)는 건드리지 않는다. 정적 내보내기에서 쓸 수 없는 파일 두 개는 빌드하는 동안만 치워 두고
-// 끝나면(실패해도) 원래 자리로 되돌린다.
+// Cloudflare Pages(정적 호스팅)용 빌드. 결과는 out/ 폴더이다.
+//   npm run build:cloudflare              미리보기용: twohandsmeta.pages.dev 주소, 검색엔진 노출 차단
+//   npm run build:cloudflare -- --launch  정식 공개용: twohandsmeta.co.jp 주소, 노출 허용
+// Cloudflare Pages 의 Git 연동 빌드에서도 같은 명령을 쓴다. 그때는 Cloudflare 가 넣어 주는 CF_PAGES_* 환경변수를 읽는다.
+// 정적 내보내기에서 쓸 수 없는 파일 두 개는 빌드하는 동안만 치워 두고 끝나면(실패해도) 원래 자리로 되돌린다.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+
+const PREVIEW_URL = "https://twohandsmeta.pages.dev"; // Cloudflare Pages 프로젝트 이름: twohandsmeta
+const LAUNCH_URL = "https://twohandsmeta.co.jp";
+const launch = process.argv.includes("--launch");
+// 환경변수로 직접 지정하면 그 값을 우선한다.
+process.env.NEXT_PUBLIC_SITE_URL ||= launch ? LAUNCH_URL : PREVIEW_URL;
+if (launch) process.env.NEXT_PUBLIC_ALLOW_INDEXING ||= "true";
+
+// Cloudflare Pages Git 빌드: main(운영 브랜치)이 아닌 브랜치(PR 미리보기)는 항상 노출을 막고, 주소는 그 배포의 주소를 쓴다.
+// 운영 환경에만 NEXT_PUBLIC_ALLOW_INDEXING=true 를 설정해 두어도 미리보기 배포가 검색에 잡히지 않도록 하는 안전장치이다.
+const PRODUCTION_BRANCH = "main";
+if (process.env.CF_PAGES && process.env.CF_PAGES_BRANCH !== PRODUCTION_BRANCH) {
+  process.env.NEXT_PUBLIC_ALLOW_INDEXING = "false";
+  if (process.env.CF_PAGES_URL) process.env.NEXT_PUBLIC_SITE_URL = process.env.CF_PAGES_URL;
+}
 
 const root = process.cwd();
 const hold = path.join(root, ".cf-hold");
@@ -55,16 +71,21 @@ if (res.status !== 0) process.exit(res.status ?? 1);
 
 const out = path.join(root, "out");
 const defaultLocale = "ja";
+// 검색엔진 노출은 기본 차단. 정식 공개 때 NEXT_PUBLIC_ALLOW_INDEXING=true 로 다시 빌드한다.
+const allowIndexing = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 
 // / 는 기본 언어로 보낸다. (_redirects 는 Cloudflare Pages 가 읽고, index.html 은 안전장치)
 fs.writeFileSync(path.join(out, "_redirects"), `/ /${defaultLocale} 302\n`);
 fs.writeFileSync(
   path.join(out, "index.html"),
-  `<!doctype html><html lang="${defaultLocale}"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/${defaultLocale}"><link rel="canonical" href="/${defaultLocale}"><title>twohandsmeta</title></head><body><a href="/${defaultLocale}">/${defaultLocale}</a></body></html>\n`,
+  `<!doctype html><html lang="${defaultLocale}"><head><meta charset="utf-8"><meta name="robots" content="${allowIndexing ? "index" : "noindex, nofollow"}"><meta http-equiv="refresh" content="0;url=/${defaultLocale}"><link rel="canonical" href="/${defaultLocale}"><title>twohandsmeta</title></head><body><a href="/${defaultLocale}">/${defaultLocale}</a></body></html>\n`,
 );
 
 // 확장자 없는 OG 이미지 파일의 형식을 알려 준다. (링크 미리보기 크롤러가 이미지로 인식하도록)
-fs.writeFileSync(path.join(out, "_headers"), "/opengraph-image\n  Content-Type: image/png\n");
+fs.writeFileSync(
+  path.join(out, "_headers"),
+  "/opengraph-image\n  Content-Type: image/png\n" + (allowIndexing ? "" : "\n/*\n  X-Robots-Tag: noindex, nofollow\n"),
+);
 
 // 없는 주소용 404 (Cloudflare Pages 는 out/404.html 을 자동으로 사용한다)
 fs.writeFileSync(
@@ -75,4 +96,6 @@ fs.writeFileSync(
 );
 
 const count = (dir) => fs.readdirSync(dir, { withFileTypes: true }).reduce((n, e) => n + (e.isDirectory() ? count(path.join(dir, e.name)) : 1), 0);
-console.log(`\nCloudflare Pages용 정적 파일 ${count(out)}개를 out/ 에 만들었습니다.`);
+console.log(
+  `\nCloudflare Pages용 정적 파일 ${count(out)}개를 out/ 에 만들었습니다.\n  주소: ${process.env.NEXT_PUBLIC_SITE_URL}\n  검색엔진 노출: ${allowIndexing ? "허용" : "차단"}`,
+);

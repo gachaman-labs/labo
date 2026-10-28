@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { siteUrl } from "@data/site";
 import { routing } from "@/i18n/routing";
+import { allowIndexing, noIndexRobots } from "@/lib/indexing";
 
 type Args = { locale: string; path: string; titleKey: string; title?: string; description?: string };
 
@@ -29,6 +30,6 @@ export async function pageMetadata({ locale, path, titleKey, title, description 
       type: "website",
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "twohandsmeta" }],
     },
-    robots: locale === "ja" && !hasJa ? { index: false, follow: true } : undefined,
+    robots: !allowIndexing ? noIndexRobots : locale === "ja" && !hasJa ? { index: false, follow: true } : undefined,
   };
 }
