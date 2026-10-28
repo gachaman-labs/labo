@@ -1,7 +1,7 @@
-// Cloudflare Pages(정적 호스팅)용 빌드. 결과는 out/ 폴더이며 그대로 업로드하면 된다.
-//   npm run build:cloudflare
+// Cloudflare Pages(정적 호스팅)용 빌드. 결과는 out/ 폴더이다.
 //   npm run build:cloudflare              미리보기용: twohandsmeta.pages.dev 주소, 검색엔진 노출 차단
 //   npm run build:cloudflare -- --launch  정식 공개용: twohandsmeta.co.jp 주소, 노출 허용
+// Cloudflare Pages 의 Git 연동 빌드에서도 같은 명령을 쓴다. 그때는 Cloudflare 가 넣어 주는 CF_PAGES_* 환경변수를 읽는다.
 // 정적 내보내기에서 쓸 수 없는 파일 두 개는 빌드하는 동안만 치워 두고 끝나면(실패해도) 원래 자리로 되돌린다.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
@@ -14,6 +14,14 @@ const launch = process.argv.includes("--launch");
 // 환경변수로 직접 지정하면 그 값을 우선한다.
 process.env.NEXT_PUBLIC_SITE_URL ||= launch ? LAUNCH_URL : PREVIEW_URL;
 if (launch) process.env.NEXT_PUBLIC_ALLOW_INDEXING ||= "true";
+
+// Cloudflare Pages Git 빌드: main(운영 브랜치)이 아닌 브랜치(PR 미리보기)는 항상 노출을 막고, 주소는 그 배포의 주소를 쓴다.
+// 운영 환경에만 NEXT_PUBLIC_ALLOW_INDEXING=true 를 설정해 두어도 미리보기 배포가 검색에 잡히지 않도록 하는 안전장치이다.
+const PRODUCTION_BRANCH = "main";
+if (process.env.CF_PAGES && process.env.CF_PAGES_BRANCH !== PRODUCTION_BRANCH) {
+  process.env.NEXT_PUBLIC_ALLOW_INDEXING = "false";
+  if (process.env.CF_PAGES_URL) process.env.NEXT_PUBLIC_SITE_URL = process.env.CF_PAGES_URL;
+}
 
 const root = process.cwd();
 const hold = path.join(root, ".cf-hold");
