@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers(정적 파일) 배포 설정. `npm run build:cloudflare` 가 만든 out/ 폴더를 올린다.
+  // Worker 이름은 Cloudflare 대시보드의 프로젝트 이름(twohandsmeta)과 같아야 한다.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "twohandsmeta",
+  "compatibility_date": "2026-10-23",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "html_handling": "drop-trailing-slash"
+  }
+}
