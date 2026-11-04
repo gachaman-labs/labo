@@ -50,10 +50,6 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                   <h3 className="mt-1 text-2xl text-primary">{t(`${base}.name`)}</h3>
                   <dl className="mt-6 space-y-4">
                     <div>
-                      <dt className="text-sm font-semibold text-text-muted">{t("team.education")}</dt>
-                      <dd>{t(`${base}.education`)}</dd>
-                    </div>
-                    <div>
                       <dt className="text-sm font-semibold text-text-muted">{t("team.career")}</dt>
                       <dd>
                         <ul className="list-disc pl-5">

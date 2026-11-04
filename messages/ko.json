@@ -143,13 +143,11 @@
     },
     "team": {
       "title": "대표 프로필",
-      "education": "학력",
       "career": "경력",
       "current": "현직",
       "kimhyun": {
         "name": "김현",
         "role": "대표이사",
-        "education": "서울대학교 재료공학 졸업",
         "career": [
           "메리츠증권 기업금융팀",
           "NC 일본 법인 경영 총괄 역임",
