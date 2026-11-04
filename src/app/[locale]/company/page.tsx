@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { company } from "@data/site";
+import { addressOf, company } from "@data/site";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { TodoText } from "@/components/ui/Todo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -21,12 +20,9 @@ export default async function Company({ params }: { params: Promise<{ locale: st
     [t("rows.nameEn"), company.nameEn],
     [t("rows.nameJa"), company.nameJa],
     [t("rows.representative"), rep],
-    [t("rows.established"), <TodoText key="est" value={company.established} />],
-    [t("rows.address"), <TodoText key="addr" value={company.address} />],
-    [t("rows.registration"), <TodoText key="reg" value={company.registration} />],
+    [t("rows.established"), locale === "ja" ? company.established.ja : company.established.ko],
+    [t("rows.address"), addressOf(locale)],
     [t("rows.business"), t("businessValue")],
-    [t("rows.phone"), <TodoText key="tel" value={company.phone} />],
-    [t("rows.email"), <TodoText key="mail" value={company.email} />],
   ];
 
   return (

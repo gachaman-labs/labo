@@ -5,8 +5,7 @@ export async function Todo({ label }: { label?: string }) {
   const t = await getTranslations("common");
   return (
     <div className="rounded-card border border-dashed border-border bg-bg-subtle px-5 py-6 text-text-muted">
-      {label ? <span className="font-medium">{label} · </span> : null}
-      {t("pending")}
+      {label ?? t("pending")}
     </div>
   );
 }

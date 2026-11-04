@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { company } from "@data/site";
+import { addressOf, company } from "@data/site";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { TodoText } from "@/components/ui/Todo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -15,6 +14,8 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
+  // 지도 검색은 일본어 주소가 정확하다.
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address.ja)}`;
 
   return (
     <>
@@ -30,23 +31,14 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
             <p className="mt-3 text-text-muted">{t("channel.body")}</p>
           </div>
           <div className="card p-6">
-            <h2 className="text-xl text-primary">{t("direct.title")}</h2>
-            <dl className="mt-4 space-y-4 text-sm">
-              <div>
-                <dt className="font-semibold text-text-muted">{t("direct.email")}</dt>
-                <dd><TodoText value={company.email} /></dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-text-muted">{t("direct.booking")}</dt>
-                <dd>
-                  {company.bookingUrl !== "TODO" ? (
-                    <a href={company.bookingUrl} className="text-accent underline" target="_blank" rel="noopener noreferrer">{t("direct.bookingLink")}</a>
-                  ) : (
-                    <TodoText value="TODO" />
-                  )}
-                </dd>
-              </div>
-            </dl>
+            <h2 className="text-xl text-primary">{t("office.title")}</h2>
+            <p className="mt-4">{addressOf(locale)}</p>
+            <a href={mapUrl} className="mt-3 inline-block text-sm text-accent underline" target="_blank" rel="noopener noreferrer">{t("office.map")}</a>
+            {company.bookingUrl !== "TODO" ? (
+              <p className="mt-4 text-sm">
+                <a href={company.bookingUrl} className="text-accent underline" target="_blank" rel="noopener noreferrer">{t("direct.bookingLink")}</a>
+              </p>
+            ) : null}
           </div>
         </div>
       </section>

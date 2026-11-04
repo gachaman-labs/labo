@@ -1,14 +1,12 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { company } from "@data/site";
-import { TodoText } from "@/components/ui/Todo";
+import { addressOf, company } from "@data/site";
 
 export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
   const name = locale === "ja" ? company.nameJa : company.nameKo;
   const rep = locale === "ja" ? company.representativeJa : company.representative;
-  const contact = company.email !== "TODO" ? company.email : company.phone;
 
   return (
     <footer className="bg-primary text-white/80">
@@ -21,9 +19,7 @@ export async function Footer({ locale }: { locale: string }) {
             </p>
             <dl className="mt-4 space-y-1 text-sm">
               <div className="flex gap-2"><dt>{t("representative")}</dt><dd>{rep}</dd></div>
-              <div className="flex gap-2"><dt>{t("address")}</dt><dd><TodoText value={company.address} inverse /></dd></div>
-              <div className="flex gap-2"><dt>{t("registration")}</dt><dd><TodoText value={company.registration} inverse /></dd></div>
-              <div className="flex gap-2"><dt>{t("contact")}</dt><dd><TodoText value={contact} inverse /></dd></div>
+              <div className="flex gap-2"><dt>{t("address")}</dt><dd>{addressOf(locale)}</dd></div>
             </dl>
           </div>
           <nav aria-label="Footer" className="flex gap-6 text-sm">
