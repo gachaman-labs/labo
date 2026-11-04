@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
 import { team } from "@data/team";
@@ -46,39 +45,27 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               const base = `team.${m.id}`;
               const career = t.raw(`${base}.career`) as string[];
               return (
-                <article key={m.id} className="card grid gap-8 p-6 md:grid-cols-[220px_1fr] md:p-8">
-                  <div>
-                    {m.photo ? (
-                      <Image src={m.photo} alt={t(`${base}.name`)} width={220} height={260} className="rounded-card object-cover" />
-                    ) : (
-                      // TODO: 프로필 사진 교체 (data/team.ts 의 photo)
-                      <div role="img" aria-label={t("team.photoAlt")} className="flex aspect-[220/260] items-center justify-center rounded-card bg-primary/10 text-sm text-text-muted">
-                        {t("team.photoAlt")}
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-accent">{t(`${base}.role`)}</p>
-                    <h3 className="mt-1 text-2xl text-primary">{t(`${base}.name`)}</h3>
-                    <dl className="mt-6 space-y-4">
-                      <div>
-                        <dt className="text-sm font-semibold text-text-muted">{t("team.education")}</dt>
-                        <dd>{t(`${base}.education`)}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-sm font-semibold text-text-muted">{t("team.career")}</dt>
-                        <dd>
-                          <ul className="list-disc pl-5">
-                            {career.map((c) => <li key={c}>{c}</li>)}
-                          </ul>
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-sm font-semibold text-text-muted">{t("team.current")}</dt>
-                        <dd>{t(`${base}.current`)}</dd>
-                      </div>
-                    </dl>
-                  </div>
+                <article key={m.id} className="card p-6 md:p-8">
+                  <p className="text-sm font-semibold text-accent">{t(`${base}.role`)}</p>
+                  <h3 className="mt-1 text-2xl text-primary">{t(`${base}.name`)}</h3>
+                  <dl className="mt-6 space-y-4">
+                    <div>
+                      <dt className="text-sm font-semibold text-text-muted">{t("team.education")}</dt>
+                      <dd>{t(`${base}.education`)}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-sm font-semibold text-text-muted">{t("team.career")}</dt>
+                      <dd>
+                        <ul className="list-disc pl-5">
+                          {career.map((c) => <li key={c}>{c}</li>)}
+                        </ul>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-sm font-semibold text-text-muted">{t("team.current")}</dt>
+                      <dd>{t(`${base}.current`)}</dd>
+                    </div>
+                  </dl>
                 </article>
               );
             })}

@@ -9,7 +9,7 @@ export const company = {
   nameJa: "株式会社ツーハンズメタ",
   representative: "김현",
   representativeJa: "金 炫(キム　ヒョン)",
-  established: TODO,
+  established: { ja: "2022年11月11日", ko: "2022년 11월 11일" },
   // 소재지(일본). 연락처·이메일·사업자 정보는 노출하지 않는다. 문의는 채널톡으로 받는다.
   address: {
     ja: "〒105-0001 東京都港区虎ノ門２丁目４−７ T-LITE 16F",

@@ -85,7 +85,6 @@ GitHub에 푸시하면 Cloudflare가 알아서 빌드하고 배포한다. 서버
 
 ## 교체해야 할 값 (TODO)
 
-`data/site.ts`: 소재지, 사업자 정보, 연락처, 설립일 · `data/team.ts`: 프로필 사진 ·
 `data/partners.ts`: 파트너 · `data/cases.ts`: 2026년 실적 2건(`published: true`로 변경) ·
 `messages/ja.json`: 일본어 검수(`TODO(JP)`) · 서비스/분야 세부 문구, 진행 기간 ·
 개인정보처리방침·회사 개요(법무 검토) · 채널톡 키 · 파비콘/OG 이미지 교체 시 `src/app/` 의 이미지 파일.

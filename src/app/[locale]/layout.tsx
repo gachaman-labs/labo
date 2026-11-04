@@ -68,6 +68,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             name: company.nameEn,
             alternateName: [company.nameKo, company.nameJa],
             logo: `${siteUrl}/logo.png`,
+            foundingDate: "2022-11-11",
             url: siteUrl,
             founder: { "@type": "Person", name: company.representative },
           }}
